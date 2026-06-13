@@ -217,11 +217,11 @@
     let tentativaSenha = "";
     const senhaCorreta = "1462";
 
-    function digitar(numero) {
+        function digitar(numero) {
         tentativaSenha += numero;
         if (tentativaSenha.length === 4) {
             if (tentativaSenha === senhaCorreta) {
-                abrirZap('home');
+                mudarTela('home');
                 tentativaSenha = ""; 
             } else {
                 alert("Senha Incorreta!");
@@ -230,11 +230,23 @@
         }
     }
 
-    function abrirZap(idTela) {
+    // Esta função agora aceita qualquer um dos nomes para não travar os botões
+    function mudarTela(idTela) {
         const telas = document.querySelectorAll('.tela');
         telas.forEach(tela => tela.classList.remove('ativa'));
-        document.getElementById(idTela).classList.add('ativa');
+        
+        const alvo = document.getElementById(idTela);
+        if (alvo) {
+            alvo.classList.add('ativa');
+        }
     }
+    
+    // Deixa o sistema compatível caso o botão chame por abrirZap
+    function abrirZap(idTela) {
+        mudarTela(idTela);
+    }
+
+    
 
     function ampliarFoto(el) {
         const url = el.querySelector('img').src;
