@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celular de Investigação</title>
+    <title>Celular da Vítima</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-        body { background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        body { background: #222; display: flex; justify-content: center; align-items: center; height: 100vh; }
         
-        /* Moldura do Celular */
+        /* Moldura do Celular Original */
         .celular {
             width: 360px; height: 740px;
             background: #000; border: 12px solid #333;
@@ -16,6 +16,7 @@
             position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
+        /* Sistema de Telas Original */
         .tela { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: none; }
         .ativa { display: block; }
         
@@ -24,19 +25,12 @@
             background: url('https://googleusercontent.com') center/cover; 
         }
 
-        /* Caixa de feedback para mostrar o que está sendo digitado (Provisório para Teste) */
-        .visor-senha {
-            position: absolute; top: 18%; left: 0; width: 100%;
-            text-align: center; color: white; font-size: 24px; font-weight: bold;
-            letter-spacing: 10px; text-shadow: 2px 2px 4px black;
-        }
-
         .teclado-invisivel {
             position: absolute; top: 25%; left: 12%; width: 76%; height: 44%;
             display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 15px;
         }
 
-        /* 2️⃣ TELA INICIAL / HOME */
+        /* 2️⃣ TELA INICIAL (HOME) */
         #home { 
             background: url('https://googleusercontent.com') center/cover; 
         }
@@ -55,16 +49,15 @@
             background: rgba(255,255,255,0); border: none; cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
-        .btn-oculto:active { background: rgba(255,255,255,0.15); }
 
-        /* Estilo Geral das Telas Internas */
+        /* Estilo Base dos Apps Internos com Cores Solicitadas */
         .app-header { color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; font-size: 18px; }
         .btn-voltar { background: none; border: none; color: white; font-size: 18px; margin-right: 15px; cursor: pointer; }
         .app-corpo { height: calc(100% - 54px); overflow-y: auto; padding: 15px; text-align: left; }
         
         .item-lista { padding: 12px 5px; border-bottom: 1px solid rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 3px; }
-        .item-lista strong { font-size: 16px; color: #222; }
-        .item-lista span { font-size: 14px; color: #555; }
+        .item-lista strong { font-size: 16px; color: #222; font-weight: bold; }
+        .item-lista span { font-size: 14px; color: #555; font-weight: normal; }
 
         /* 3️⃣ TELA DA GALERIA */
         #galeria { background: #121212; }
@@ -76,6 +69,7 @@
         }
         .foto-container img { width: 100%; height: 100%; object-fit: cover; }
 
+        /* Estilos e Fundos Personalizados */
         #zap { background: #efeae2; } .zap-header { background: #075e54; }
         .chat-box { padding: 15px; display: flex; flex-direction: column; gap: 10px; height: calc(100% - 54px); overflow-y: auto; }
         .balao { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: black; }
@@ -93,9 +87,6 @@
     
     <!-- TELA DE BLOQUEIO -->
     <div id="bloqueio" class="tela ativa">
-        <!-- Pequeno visor para ver o número sendo registrado -->
-        <div id="visor" class="visor-senha"></div>
-        
         <div class="teclado-invisivel">
             <button class="btn-oculto" onclick="digitar('1')"></button>
             <button class="btn-oculto" onclick="digitar('2')"></button>
@@ -115,20 +106,20 @@
     <!-- TELA INICIAL (HOME) -->
     <div id="home" class="tela">
         <div class="linha-cima-invisivel">
-            <button class="btn-oculto" onclick="mudarTela('galeria')"></button>
+            <button class="btn-oculto" onclick="abrirZap('galeria')"></button>
         </div>
         <div class="dock-apps-invisivel">
-            <button class="btn-oculto" onclick="mudarTela('sms')"></button>
-            <button class="btn-oculto" onclick="mudarTela('ligacoes')"></button>
-            <button class="btn-oculto" onclick="mudarTela('contatos')"></button>
-            <button class="btn-oculto" onclick="mudarTela('zap')"></button>
+            <button class="btn-oculto" onclick="abrirZap('sms')"></button>
+            <button class="btn-oculto" onclick="abrirZap('ligacoes')"></button>
+            <button class="btn-oculto" onclick="abrirZap('contatos')"></button>
+            <button class="btn-oculto" onclick="abrirZap('zap')"></button>
         </div>
     </div>
 
     <!-- TELA DA GALERIA -->
     <div id="galeria" class="tela">
         <div class="app-header galeria-header">
-            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
             <span>Galeria</span>
         </div>
         <div class="app-corpo">
@@ -144,7 +135,7 @@
     <!-- TELA DO WHATSAPP -->
     <div id="zap" class="tela">
         <div class="app-header zap-header">
-            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
             <span>Carlos (Suspeito)</span>
         </div>
         <div class="chat-box">
@@ -156,7 +147,7 @@
     <!-- TELA DE MENSAGENS SMS -->
     <div id="sms" class="tela">
         <div class="app-header sms-header">
-            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
             <span>Mensagens SMS</span>
         </div>
         <div class="app-corpo">
@@ -170,7 +161,7 @@
     <!-- TELA DE LIGAÇÕES -->
     <div id="ligacoes" class="tela">
         <div class="app-header ligacoes-header">
-            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
             <span>Últimas Chamadas</span>
         </div>
         <div class="app-corpo">
@@ -184,7 +175,7 @@
     <!-- TELA DE CONTATOS -->
     <div id="contatos" class="tela">
         <div class="app-header contatos-header">
-            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
             <span>Meus Contatos</span>
         </div>
         <div class="app-corpo">
@@ -203,22 +194,24 @@
 
     function digitar(numero) {
         tentativaSenha += numero;
-        
-        // Mostra na tela os números digitados em tempo real
-        document.getElementById('visor').innerText = tentativaSenha;
-        
         if (tentativaSenha.length === 4) {
-            // Pequeno atraso para dar tempo do jogador ver o número antes de validar
-            setTimeout(function() {
-                if (tentativaSenha === senhaCorreta) {
-                    mudarTela('home');
-                } else {
-                    alert("Senha Incorreta!");
-                }
+            if (tentativaSenha === senhaCorreta) {
+                abrirZap('home');
                 tentativaSenha = ""; 
-                document.getElementById('visor').innerText = "";
-            }, 300);
+            } else {
+                alert("Senha Incorreta!");
+                tentativaSenha = ""; 
+            }
         }
     }
 
-    function mudarTela(idTela) {
+    // Função original de navegação estritamente idêntica à inicial
+    function abrirZap(idTela) {
+        const telas = document.querySelectorAll('.tela');
+        telas.forEach(tela => tela.classList.remove('ativa'));
+        document.getElementById(idTela).classList.add('ativa');
+    }
+</script>
+
+</body>
+</html>
