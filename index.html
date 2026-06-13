@@ -19,29 +19,29 @@
         .tela { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: none; }
         .ativa { display: block; }
         
-        /* 1️⃣ TELA DE BLOQUEIO */
+        /* 1️⃣ TELA DE BLOQUEIO (Imagem do seu Blog) */
         #bloqueio { 
             background: url('https://googleusercontent.com') center/cover; 
         }
 
+        /* Teclado Invisível posicionado sobre a sua arte */
         .teclado-invisivel {
             position: absolute; top: 25%; left: 12%; width: 76%; height: 44%;
             display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 15px;
         }
 
-        /* 2️⃣ TELA INICIAL / HOME (Com a sua Nova Imagem) */
+        /* 2️⃣ TELA INICIAL / HOME (Imagem do seu Blog) */
         #home { 
-            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsLS37UJhpmxUykOW6ZdnJ5DRFZEa22evmNVKIRlBdsUOUV1rP5TJCt0dbMPTzbimOfFNOGUGg_1RmEFh36KW7mn1i_NdEdvLG0B4v2MpOoJoQgDr78ea6GWr_Yy42SxOajLGgz2RMKvbBfL7GHik6glLZtuhzQZsA4ty0KKMKhcE4xI3IJXoj7nLCK_WA/s4800/2_20260613_005825_0000.png') center/cover; 
+            background: url('https://googleusercontent.com') center/cover; 
         }
 
-        /* Linha de Cima (Apenas o botão da Galeria mapeado no primeiro espaço) */
+        /* Linha de Cima (Galeria) */
         .linha-cima-invisivel {
-            position: absolute;
-            top: 14%; left: 6%; width: 88%; height: 11%;
+            position: absolute; top: 14%; left: 6%; width: 88%; height: 11%;
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
         }
 
-        /* Rodapé com os 4 Apps originais */
+        /* Rodapé com os 4 Apps */
         .dock-apps-invisivel {
             position: absolute; bottom: 4%; left: 6%; width: 88%; height: 11%;
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
@@ -53,7 +53,6 @@
             -webkit-tap-highlight-color: transparent;
         }
         .btn-oculto:active { background: rgba(255,255,255,0.15); }
-        .app-clique { border-radius: 15px; }
 
         /* Estilo Cabeçalhos Padrão Android */
         .app-header { color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; font-size: 18px; }
@@ -64,18 +63,13 @@
         .item-lista strong { font-size: 16px; color: #222; }
         .item-lista span { font-size: 14px; color: #555; }
 
-        /* 3️⃣ TELA DA GALERIA (Padrão Android: Fundo Escuro e Grade 2x2) */
+        /* 3️⃣ TELA DA GALERIA (Grade 2x2) */
         #galeria { background: #121212; }
         .galeria-header { background: #212121; border-bottom: 1px solid #333; }
         
-        .grid-fotos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha */
-            gap: 12px; padding: 5px;
-        }
+        .grid-fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 5px; }
         .foto-container {
-            width: 100%; aspect-ratio: 1 / 1; /* Mantém as fotos quadradinhas */
-            background: #2a2a2a; border-radius: 8px; overflow: hidden;
+            width: 100%; aspect-ratio: 1 / 1; background: #2a2a2a; border-radius: 8px; overflow: hidden;
             display: flex; justify-content: center; align-items: center;
         }
         .foto-container img { width: 100%; height: 100%; object-fit: cover; }
@@ -115,21 +109,18 @@
 
     <!-- TELA INICIAL (HOME) -->
     <div id="home" class="tela">
-        <!-- Nova linha superior (Mapeada sobre o primeiro ícone: Galeria) -->
         <div class="linha-cima-invisivel">
-            <button class="btn-oculto app-clique" onclick="abrirApp('galeria')"></button>
-            <!-- Os outros 3 espaços da linha estão livres caso queira adicionar apps futuramente -->
+            <button class="btn-oculto" onclick="abrirApp('galeria')"></button>
         </div>
-        <!-- Linha inferior (Rodapé com os 4 Apps) -->
         <div class="dock-apps-invisivel">
-            <button class="btn-oculto app-clique" onclick="abrirApp('sms')"></button>
-            <button class="btn-oculto app-clique" onclick="abrirApp('ligacoes')"></button>
-            <button class="btn-oculto app-clique" onclick="abrirApp('contatos')"></button>
-            <button class="btn-oculto app-clique" onclick="abrirApp('zap')"></button>
+            <button class="btn-oculto" onclick="abrirApp('sms')"></button>
+            <button class="btn-oculto" onclick="abrirApp('ligacoes')"></button>
+            <button class="btn-oculto" onclick="abrirApp('contatos')"></button>
+            <button class="btn-oculto" onclick="abrirApp('zap')"></button>
         </div>
     </div>
 
-    <!-- TELA DA GALERIA (Grade 2 por linha) -->
+    <!-- TELA DA GALERIA -->
     <div id="galeria" class="tela">
         <div class="app-header galeria-header">
             <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
@@ -137,22 +128,8 @@
         </div>
         <div class="app-corpo">
             <div class="grid-fotos">
-                <!-- Foto 1 (Cole o link da foto do seu blog no lugar do exemplo) -->
-                <div class="foto-container">
-                    <img src="https://picsum.photos" alt="Foto Pista 1">
-                </div>
-                <!-- Foto 2 -->
-                <div class="foto-container">
-                    <img src="https://picsum.photos" alt="Foto Pista 2">
-                </div>
-                <!-- Foto 3 -->
-                <div class="foto-container">
-                    <img src="https://picsum.photos" alt="Foto Pista 3">
-                </div>
-                <!-- Foto 4 -->
-                <div class="foto-container">
-                    <img src="https://picsum.photos" alt="Foto Pista 4">
-                </div>
+                <div class="foto-container"><img src="https://picsum.photos"></div>
+                <div class="foto-container"><img src="https://picsum.photos"></div>
             </div>
         </div>
     </div>
@@ -218,3 +195,29 @@
     const senhaCorreta = "1462";
 
     function digitar(numero) {
+        tentativaSenha += numero;
+        if (tentativaSenha.length === 4) {
+            if (tentativaSenha === senhaCorreta) {
+                abrirApp('home');
+                tentativaSenha = ""; 
+            } else {
+                alert("Senha Incorreta!");
+                tentativaSenha = ""; 
+            }
+        }
+    }
+
+    // Função única para navegação
+    function abrirApp(idTela) {
+        const telas = document.querySelectorAll('.tela');
+        telas.forEach(tela => tela.classList.remove('active', 'ativa'));
+        
+        const alvo = document.getElementById(idTela);
+        if (alvo) {
+            alvo.classList.add('ativa');
+        }
+    }
+</script>
+
+</body>
+</html>
