@@ -8,53 +8,54 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
         body { background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; }
         
-        /* Moldura do Celular */
+        /* Moldura do Celular (Igual ao primeiro código funcional) */
         .celular {
-            width: 360px; height: 680px;
+            width: 360px; height: 740px;
             background: #000; border: 12px solid #333;
-            border-radius: 40px; overflow: hidden; position: relative; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            border-radius: 36px; overflow: hidden;
+            position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
+        /* Sistema de exibição das telas */
         .tela { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: none; }
         .ativa { display: block; }
         
-        /* 1️⃣ TELA DE BLOQUEIO (Imagem do seu Blog Corrigida) */
+        /* 1️⃣ TELA DE BLOQUEIO (Imagem 1) */
         #bloqueio { 
-            background: url('https://googleusercontent.com') center/cover; 
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ2BdNwvgcnkC8j0sF0kguIdSOKr8yIv3XCjZ0x6dNO5weQ_qjd0wMGDR85lm1t6BaWnKJ6RmCgOel4kEnihOM_FWaevbW2GQwpIBhKWvFg_dm1PHGsVi2xNoFKxwEm3wXtkWWHYHLCfeZCrk0nBA95C4KSSj4G73b6uzcGvb25K1iYDwsO1qxVXia8C1r/s5280/2_20260612_131216_0000.png') center/cover; 
         }
 
-        /* Teclado Invisível posicionado sobre a sua arte */
+        /* Área do teclado numérico invisível */
         .teclado-invisivel {
             position: absolute; top: 25%; left: 12%; width: 76%; height: 44%;
             display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 15px;
         }
 
-        /* 2️⃣ TELA INICIAL / HOME (Imagem do seu Blog) */
+        /* 2️⃣ TELA INICIAL / HOME (Nova Imagem 2 com a Galeria no topo) */
         #home { 
-            background: url('https://googleusercontent.com') center/cover; 
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsLS37UJhpmxUykOW6ZdnJ5DRFZEa22evmNVKIRlBdsUOUV1rP5TJCt0dbMPTzbimOfFNOGUGg_1RmEFh36KW7mn1i_NdEdvLG0B4v2MpOoJoQgDr78ea6GWr_Yy42SxOajLGgz2RMKvbBfL7GHik6glLZtuhzQZsA4ty0KKMKhcE4xI3IJXoj7nLCK_WA/s4800/2_20260613_005825_0000.png') center/cover; 
         }
 
-        /* Linha de Cima (Galeria) */
+        /* Linha de cima invisível (Mapeada exatamente sobre o ícone da Galeria) */
         .linha-cima-invisivel {
             position: absolute; top: 14%; left: 6%; width: 88%; height: 11%;
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
         }
 
-        /* Rodapé com os 4 Apps */
+        /* Rodapé invisível (Mapeado sobre os 4 aplicativos de baixo) */
         .dock-apps-invisivel {
             position: absolute; bottom: 4%; left: 6%; width: 88%; height: 11%;
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
         }
 
-        /* Estilo dos Botões Ocultos */
+        /* Configuração dos botões transparentes */
         .btn-oculto {
             background: rgba(255,255,255,0); border: none; cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
         .btn-oculto:active { background: rgba(255,255,255,0.15); }
 
-        /* Estilo Cabeçalhos Padrão Android */
+        /* Estilo Geral das Telas Internas dos Aplicativos */
         .app-header { color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; font-size: 18px; }
         .btn-voltar { background: none; border: none; color: white; font-size: 18px; margin-right: 15px; cursor: pointer; }
         .app-corpo { height: calc(100% - 54px); overflow-y: auto; padding: 15px; text-align: left; }
@@ -63,10 +64,9 @@
         .item-lista strong { font-size: 16px; color: #222; }
         .item-lista span { font-size: 14px; color: #555; }
 
-        /* 3️⃣ TELA DA GALERIA (Grade 2x2) */
+        /* 3️⃣ TELA DA GALERIA (Padrão Android com Grade de fotos 2 a 2) */
         #galeria { background: #121212; }
         .galeria-header { background: #212121; border-bottom: 1px solid #333; }
-        
         .grid-fotos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 5px; }
         .foto-container {
             width: 100%; aspect-ratio: 1 / 1; background: #2a2a2a; border-radius: 8px; overflow: hidden;
@@ -74,12 +74,13 @@
         }
         .foto-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Cores dos outros Apps */
+        /* Cores de fundo e cabeçalhos dos outros aplicativos */
         #zap { background: #efeae2; } .zap-header { background: #075e54; }
         .chat-box { padding: 15px; display: flex; flex-direction: column; gap: 10px; height: calc(100% - 54px); overflow-y: auto; }
         .balao { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: black; }
         .recebida { background: white; align-self: flex-start; }
         .enviada { background: #d9fdd3; align-self: flex-end; }
+        
         #sms { background: #e3f2fd; } .sms-header { background: #00bcd4; }
         #ligacoes { background: #e8f5e9; } .ligacoes-header { background: #4caf50; }
         #contatos { background: #f0f4c3; } .contatos-header { background: #2196f3; }
@@ -109,25 +110,29 @@
 
     <!-- TELA INICIAL (HOME) -->
     <div id="home" class="tela">
+        <!-- Linha Superior (O primeiro botão invisível abre a Galeria) -->
         <div class="linha-cima-invisivel">
-            <button class="btn-oculto" onclick="abrirApp('galeria')"></button>
+            <button class="btn-oculto" onclick="mudarTela('galeria')"></button>
         </div>
+        <!-- Rodapé (Os 4 botões invisíveis abrem as telas coloridas alinhadas à esquerda) -->
         <div class="dock-apps-invisivel">
-            <button class="btn-oculto" onclick="abrirApp('sms')"></button>
-            <button class="btn-oculto" onclick="abrirApp('ligacoes')"></button>
-            <button class="btn-oculto" onclick="abrirApp('contatos')"></button>
-            <button class="btn-oculto" onclick="abrirApp('zap')"></button>
+            <button class="btn-oculto" onclick="mudarTela('sms')"></button>
+            <button class="btn-oculto" onclick="mudarTela('ligacoes')"></button>
+            <button class="btn-oculto" onclick="mudarTela('contatos')"></button>
+            <button class="btn-oculto" onclick="mudarTela('zap')"></button>
         </div>
     </div>
 
-    <!-- TELA DA GALERIA -->
+    <!-- TELA DA GALERIA (Fotos 2 a 2 no padrão Android solicitado) -->
     <div id="galeria" class="tela">
         <div class="app-header galeria-header">
-            <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Galeria</span>
         </div>
         <div class="app-corpo">
             <div class="grid-fotos">
+                <div class="foto-container"><img src="https://picsum.photos"></div>
+                <div class="foto-container"><img src="https://picsum.photos"></div>
                 <div class="foto-container"><img src="https://picsum.photos"></div>
                 <div class="foto-container"><img src="https://picsum.photos"></div>
             </div>
@@ -137,7 +142,7 @@
     <!-- TELA DO WHATSAPP -->
     <div id="zap" class="tela">
         <div class="app-header zap-header">
-            <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Carlos (Suspeito)</span>
         </div>
         <div class="chat-box">
@@ -146,10 +151,10 @@
         </div>
     </div>
 
-    <!-- TELA DE MENSAGENS SMS -->
+    <!-- TELA DE MENSAGENS SMS (Fundo Azul Clarinho) -->
     <div id="sms" class="tela">
         <div class="app-header sms-header">
-            <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Mensagens SMS</span>
         </div>
         <div class="app-corpo">
@@ -160,10 +165,10 @@
         </div>
     </div>
 
-    <!-- TELA DE LIGAÇÕES -->
+    <!-- TELA DE LIGAÇÕES (Fundo Verdinho) -->
     <div id="ligacoes" class="tela">
         <div class="app-header ligacoes-header">
-            <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Últimas Chamadas</span>
         </div>
         <div class="app-corpo">
@@ -174,10 +179,10 @@
         </div>
     </div>
 
-    <!-- TELA DE CONTATOS -->
+    <!-- TELA DE CONTATOS (Fundo Azul Bem Fraquinho) -->
     <div id="contatos" class="tela">
         <div class="app-header contatos-header">
-            <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Meus Contatos</span>
         </div>
         <div class="app-corpo">
@@ -198,7 +203,7 @@
         tentativaSenha += numero;
         if (tentativaSenha.length === 4) {
             if (tentativaSenha === senhaCorreta) {
-                abrirApp('home');
+                mudarTela('home');
                 tentativaSenha = ""; 
             } else {
                 alert("Senha Incorreta!");
@@ -207,16 +212,3 @@
         }
     }
 
-    function abrirApp(idTela) {
-        const telas = document.querySelectorAll('.tela');
-        telas.forEach(tela => tela.classList.remove('active', 'ativa'));
-        
-        const alvo = document.getElementById(idTela);
-        if (alvo) {
-            alvo.classList.add('ativa');
-        }
-    }
-</script>
-
-</body>
-</html>
