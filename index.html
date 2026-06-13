@@ -186,3 +186,66 @@
     <!-- TELA DE LIGAÇÕES -->
     <div id="ligacoes" class="tela">
         <div class="app-header ligacoes-header">
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
+            <span>Últimas Chamadas</span>
+        </div>
+        <div class="app-corpo">
+            <div class="item-lista">
+                <strong>Carlos (Suspeito 1)</strong>
+                <span>Ontem, às 21:45 - Chamada Perdida</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DE CONTATOS -->
+    <div id="contatos" class="tela">
+        <div class="app-header contatos-header">
+            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
+            <span>Meus Contatos</span>
+        </div>
+        <div class="app-corpo">
+            <div class="item-lista">
+                <strong>Carlos (Suspeito 1)</strong>
+                <span>(11) 99999-1234</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let tentativaSenha = "";
+    const senhaCorreta = "1462";
+
+    function digitar(numero) {
+        tentativaSenha += numero;
+        if (tentativaSenha.length === 4) {
+            if (tentativaSenha === senhaCorreta) {
+                abrirZap('home');
+                tentativaSenha = ""; 
+            } else {
+                alert("Senha Incorreta!");
+                tentativaSenha = ""; 
+            }
+        }
+    }
+
+    function abrirZap(idTela) {
+        const telas = document.querySelectorAll('.tela');
+        telas.forEach(tela => tela.classList.remove('ativa'));
+        document.getElementById(idTela).classList.add('ativa');
+    }
+
+    function ampliarFoto(el) {
+        const url = el.querySelector('img').src;
+        document.getElementById('fotoAmpliada').src = url;
+        document.getElementById('zoomOverlay').style.display = 'flex';
+    }
+
+    function fecharFoto() {
+        document.getElementById('zoomOverlay').style.display = 'none';
+        document.getElementById('fotoAmpliada').src = "";
+    }
+</script>
+</body>
+</html>
