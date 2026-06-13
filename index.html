@@ -19,79 +19,83 @@
         .tela { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: none; }
         .ativa { display: block; }
         
-        /* 1️⃣ TELA DE BLOQUEIO (Imagem Oficial do seu Blog) */
+        /* 1️⃣ TELA DE BLOQUEIO */
         #bloqueio { 
-            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ2BdNwvgcnkC8j0sF0kguIdSOKr8yIv3XCjZ0x6dNO5weQ_qjd0wMGDR85lm1t6BaWnKJ6RmCgOel4kEnihOM_FWaevbW2GQwpIBhKWvFg_dm1PHGsVi2xNoFKxwEm3wXtkWWHYHLCfeZCrk0nBA95C4KSSj4G73b6uzcGvb25K1iYDwsO1qxVXia8C1r/s5280/2_20260612_131216_0000.png') center/cover; 
+            background: url('https://googleusercontent.com') center/cover; 
         }
 
-        /* Grade do Teclado Numérico Invisível (Ajustado por porcentagem sobre o seu design) */
         .teclado-invisivel {
-            position: absolute;
-            top: 25%; left: 12%;
-            width: 76%; height: 44%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            gap: 15px;
+            position: absolute; top: 25%; left: 12%; width: 76%; height: 44%;
+            display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 15px;
         }
 
-        /* 2️⃣ TELA INICIAL / HOME (Imagem Oficial do seu Blog) */
+        /* 2️⃣ TELA INICIAL / HOME (Com a sua Nova Imagem) */
         #home { 
-            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDHSmKigqfTrHqDU4H2ZtppcLVAmbuJMFUuhNEompa9mkJsmhWK7u8yhhTyrm1w5fn4kCDnlozDyo2w8qEMXXANY2jAcZhogrFI-V_OgNLwajqs9bKU6qtqI-heJCzQFOI5ElbF3zV1CB-GF4qb7LBjDlXQAtPfJrpVnmIDlvEyUqQk8u4TeFch90OzvMC/s5280/2_20260612_131158_0000.png') center/cover; 
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsLS37UJhpmxUykOW6ZdnJ5DRFZEa22evmNVKIRlBdsUOUV1rP5TJCt0dbMPTzbimOfFNOGUGg_1RmEFh36KW7mn1i_NdEdvLG0B4v2MpOoJoQgDr78ea6GWr_Yy42SxOajLGgz2RMKvbBfL7GHik6glLZtuhzQZsA4ty0KKMKhcE4xI3IJXoj7nLCK_WA/s4800/2_20260613_005825_0000.png') center/cover; 
         }
 
-        /* Zonas de clique invisíveis sobre os 4 Apps do rodapé */
-        .dock-apps-invisivel {
+        /* Linha de Cima (Apenas o botão da Galeria mapeado no primeiro espaço) */
+        .linha-cima-invisivel {
             position: absolute;
-            bottom: 4%; left: 6%;
-            width: 88%; height: 11%;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            top: 14%; left: 6%; width: 88%; height: 11%;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
         }
 
-        /* Estilo Geral dos Botões Ocultos */
+        /* Rodapé com os 4 Apps originais */
+        .dock-apps-invisivel {
+            position: absolute; bottom: 4%; left: 6%; width: 88%; height: 11%;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+        }
+
+        /* Estilo dos Botões Ocultos */
         .btn-oculto {
-            background: rgba(255,255,255,0);
-            border: none; border-radius: 50%; cursor: pointer;
+            background: rgba(255,255,255,0); border: none; cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
         .btn-oculto:active { background: rgba(255,255,255,0.15); }
-        .app-clique { border-radius: 15px; } /* Formato quadrado arredondado para o dock inferior */
+        .app-clique { border-radius: 15px; }
 
-        /* Estilo Base dos Apps Internos */
+        /* Estilo Cabeçalhos Padrão Android */
         .app-header { color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; font-size: 18px; }
         .btn-voltar { background: none; border: none; color: white; font-size: 18px; margin-right: 15px; cursor: pointer; }
         .app-corpo { height: calc(100% - 54px); overflow-y: auto; padding: 15px; text-align: left; }
         
-        /* Itens de Lista Alinhados à Esquerda */
         .item-lista { padding: 12px 5px; border-bottom: 1px solid rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 3px; }
         .item-lista strong { font-size: 16px; color: #222; }
         .item-lista span { font-size: 14px; color: #555; }
 
-        /* Customização de Cores dos Fundos */
-        #zap { background: #efeae2; }
-        .zap-header { background: #075e54; }
+        /* 3️⃣ TELA DA GALERIA (Padrão Android: Fundo Escuro e Grade 2x2) */
+        #galeria { background: #121212; }
+        .galeria-header { background: #212121; border-bottom: 1px solid #333; }
+        
+        .grid-fotos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha */
+            gap: 12px; padding: 5px;
+        }
+        .foto-container {
+            width: 100%; aspect-ratio: 1 / 1; /* Mantém as fotos quadradinhas */
+            background: #2a2a2a; border-radius: 8px; overflow: hidden;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .foto-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Cores dos outros Apps */
+        #zap { background: #efeae2; } .zap-header { background: #075e54; }
         .chat-box { padding: 15px; display: flex; flex-direction: column; gap: 10px; height: calc(100% - 54px); overflow-y: auto; }
         .balao { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: black; }
         .recebida { background: white; align-self: flex-start; }
         .enviada { background: #d9fdd3; align-self: flex-end; }
-
-        #sms { background: #e3f2fd; }
-        .sms-header { background: #00bcd4; }
-
-        #ligacoes { background: #e8f5e9; }
-        .ligacoes-header { background: #4caf50; }
-
-        #contatos { background: #f0f4c3; }
-        .contatos-header { background: #2196f3; }
+        #sms { background: #e3f2fd; } .sms-header { background: #00bcd4; }
+        #ligacoes { background: #e8f5e9; } .ligacoes-header { background: #4caf50; }
+        #contatos { background: #f0f4c3; } .contatos-header { background: #2196f3; }
     </style>
 </head>
 <body>
 
 <div class="celular">
     
-    <!-- 1️⃣ TELA DE BLOQUEIO -->
+    <!-- TELA DE BLOQUEIO -->
     <div id="bloqueio" class="tela ativa">
         <div class="teclado-invisivel">
             <button class="btn-oculto" onclick="digitar('1')"></button>
@@ -109,8 +113,14 @@
         </div>
     </div>
 
-    <!-- 2️⃣ TELA INICIAL (HOME) -->
+    <!-- TELA INICIAL (HOME) -->
     <div id="home" class="tela">
+        <!-- Nova linha superior (Mapeada sobre o primeiro ícone: Galeria) -->
+        <div class="linha-cima-invisivel">
+            <button class="btn-oculto app-clique" onclick="abrirApp('galeria')"></button>
+            <!-- Os outros 3 espaços da linha estão livres caso queira adicionar apps futuramente -->
+        </div>
+        <!-- Linha inferior (Rodapé com os 4 Apps) -->
         <div class="dock-apps-invisivel">
             <button class="btn-oculto app-clique" onclick="abrirApp('sms')"></button>
             <button class="btn-oculto app-clique" onclick="abrirApp('ligacoes')"></button>
@@ -119,7 +129,35 @@
         </div>
     </div>
 
-    <!-- 3️⃣ TELA DO WHATSAPP -->
+    <!-- TELA DA GALERIA (Grade 2 por linha) -->
+    <div id="galeria" class="tela">
+        <div class="app-header galeria-header">
+            <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
+            <span>Galeria</span>
+        </div>
+        <div class="app-corpo">
+            <div class="grid-fotos">
+                <!-- Foto 1 (Cole o link da foto do seu blog no lugar do exemplo) -->
+                <div class="foto-container">
+                    <img src="https://picsum.photos" alt="Foto Pista 1">
+                </div>
+                <!-- Foto 2 -->
+                <div class="foto-container">
+                    <img src="https://picsum.photos" alt="Foto Pista 2">
+                </div>
+                <!-- Foto 3 -->
+                <div class="foto-container">
+                    <img src="https://picsum.photos" alt="Foto Pista 3">
+                </div>
+                <!-- Foto 4 -->
+                <div class="foto-container">
+                    <img src="https://picsum.photos" alt="Foto Pista 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DO WHATSAPP -->
     <div id="zap" class="tela">
         <div class="app-header zap-header">
             <button class="btn-voltar" onclick="abrirApp('home')">◀</button>
@@ -142,10 +180,6 @@
                 <strong>Banco Central</strong>
                 <span>Seu código de segurança pix é 4839. Não compartilhe.</span>
             </div>
-            <div class="item-lista">
-                <strong>Operadora</strong>
-                <span>Sua fatura do mês já está disponível para pagamento.</span>
-            </div>
         </div>
     </div>
 
@@ -159,10 +193,6 @@
             <div class="item-lista">
                 <strong>Carlos (Suspeito 1)</strong>
                 <span>Ontem, às 21:45 - Chamada Perdida</span>
-            </div>
-            <div class="item-lista">
-                <strong>Mãe</strong>
-                <span>Ontem, às 18:20 - Efetuada (05:12 min)</span>
             </div>
         </div>
     </div>
@@ -178,14 +208,6 @@
                 <strong>Carlos (Suspeito 1)</strong>
                 <span>(11) 99999-1234</span>
             </div>
-            <div class="item-lista">
-                <strong>Dr. Roberto (Advogado)</strong>
-                <span>(11) 98888-5555</span>
-            </div>
-            <div class="item-lista">
-                <strong>Soraia Química</strong>
-                <span>(11) 96666-4321</span>
-            </div>
         </div>
     </div>
 
@@ -196,24 +218,3 @@
     const senhaCorreta = "1462";
 
     function digitar(numero) {
-        tentativaSenha += numero;
-        if (tentativaSenha.length === 4) {
-            if (tentativaSenha === senhaCorreta) {
-                abrirApp('home');
-                tentativaSenha = ""; 
-            } else {
-                alert("Senha Incorreta!");
-                tentativaSenha = ""; 
-            }
-        }
-    }
-
-    function abrirApp(idTela) {
-        const telas = document.querySelectorAll('.tela');
-        telas.forEach(tela => tela.classList.remove('ativa'));
-        document.getElementById(idTela).classList.add('ativa');
-    }
-</script>
-
-</body>
-</html>
