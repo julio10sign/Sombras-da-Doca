@@ -244,20 +244,93 @@
         </div>
     </div>
 
-    
-    <!-- TELA DE LIGAÇÕES -->
+        <!-- TELA DE LIGAÇÕES -->
     <div id="ligacoes" class="tela">
         <div class="app-header ligacoes-header">
-            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Últimas Chamadas</span>
         </div>
-        <div class="app-corpo">
-            <div class="item-lista">
-                <strong>Carlos (Suspeito 1)</strong>
-                <span>Ontem, às 21:45 - Chamada Perdida</span>
+        <div class="app-corpo" style="padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+            
+            <!-- 📅 DIA DO CRIME: 10/03/2026 -->
+            <div style="font-size: 11px; color: #777; font-weight: bold; margin: 5px 0 2px 5px;">HOJE (10/03/2026)</div>
+
+            <!-- Carlos (Madrugada do crime) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong style="color: #d32f2f;">Carlos</strong> <!-- Vermelho porque ela não atendeu na madrugada -->
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">🚫 Chamada Perdida — 00:55</span>
             </div>
+
+            <!-- Juan (Manhã) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Juan</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↙️ Recebida (3 min) — 09:15</span>
+            </div>
+
+            <!-- Renata (Manhã) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Renata</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↗️ Efetuada (1 min) — 10:40</span>
+            </div>
+
+            <!-- 📅 VÉSPERA: 09/03/2026 -->
+            <div style="font-size: 11px; color: #777; font-weight: bold; margin: 12px 0 2px 5px;">ONTEM (09/03/2026)</div>
+
+            <!-- Carlos (Véspera à noite) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Carlos</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↙️ Recebida (12 min) — 21:34</span>
+            </div>
+
+            <!-- Carol (Tarde) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Carol</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↗️ Efetuada (45 s) — 16:20</span>
+            </div>
+
+            <!-- Carlos (Véspera pela manhã) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Carlos</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↙️ Recebida (4 min) — 11:02</span>
+            </div>
+
+            <!-- Sandra - UFEPA Tesour. (Véspera pela manhã) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Sandra - UFEPA Tesour.</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↙️ Recebida (2 min) — 09:45</span>
+            </div>
+
+            <!-- Natan (Manhã) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Natan</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↗️ Efetuada (5 min) — 08:15</span>
+            </div>
+
+            <!-- 📅 DIAS ANTERIORES: 08/03 e 07/03 -->
+            <div style="font-size: 11px; color: #777; font-weight: bold; margin: 12px 0 2px 5px;">ANTERIORES</div>
+
+            <!-- Lucinha (08/03 - Noite) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Lucinha</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↙️ Recebida (14 min) — 08/03 às 20:10</span>
+            </div>
+
+            <!-- Sandra - UFEPA Tesour. (08/03 - Tarde) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong style="color: #d32f2f;">Sandra - UFEPA Tesour.</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">🚫 Chamada Perdida — 08/03 às 14:30</span>
+            </div>
+
+            <!-- Sandra - UFEPA Tesour. (07/03 - Manhã) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+                <strong>Sandra - UFEPA Tesour.</strong>
+                <span style="display: block; font-size: 12px; color: #777; margin-top: 3px;">↙️ Recebida (5 min) — 07/03 às 10:15</span>
+            </div>
+
         </div>
     </div>
+
+    
 
     <!-- TELA DE CONTATOS -->
     <div id="contatos" class="tela">
