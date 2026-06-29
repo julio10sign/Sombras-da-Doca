@@ -90,6 +90,28 @@
         #sms { background: #e3f2fd; } .sms-header { background: #00bcd4; }
         #ligacoes { background: #e8f5e9; } .ligacoes-header { background: #4caf50; }
         #contatos { background: #f0f4c3; } .contatos-header { background: #2196f3; }
+   
+    /* Garante que todas as novas telas de chat individuais ocupem 100% do celular virtual */
+#chat-venco, #chat-sandra, #chat-otavio {
+    width: 100%;
+    height: 100%;
+    background: #e5ddd5; /* Cor de fundo padrão do WhatsApp real */
+    flex-direction: column;
+}
+
+/* Força a caixa de mensagens a rolar e preencher o espaço correto */
+#chat-venco .chat-box, #chat-sandra .chat-box, #chat-otavio .chat-box {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    
+    
+    
     </style>
 </head>
 <body>
@@ -235,6 +257,18 @@
                 Confirmado. O motoboy acabou de fazer o depósito em espécie de R$ 2.500,00 na agência de São Brás. O combinado está pago. Apague essa conversa.
                 <span class="mensagem-hora">10/03/2026 - 12:05</span>
             </div>
+       <!-- Nova Mensagem: Beatriz blefando para arrancar mais dinheiro -->
+<div class="balao enviada">
+    Vou tentar conseguir mais informações sobre o diário do professor e os registros antigos da área. Me deem mais alguns dias.
+    <span class="mensagem-hora">10/03/2026 - 12:10</span>
+</div>
+
+<!-- Nova Mensagem: Resposta ambiciosa da Diretoria VENCO -->
+<div class="balao recebida">
+    Ok. Podemos ser generosos se a informação tiver valor relevante. Mas lembre-se do nosso combinado.
+    <span class="mensagem-hora">10/03/2026 - 12:15</span>
+</div>
+
         </div>
     </div>
     <!-- ⚠️ CONVERSA 2: SANDRA - UFEPA TESOUR. (Dia do Crime) -->
@@ -295,6 +329,39 @@
                 <span class="mensagem-hora">09/03/2026 - 15:35</span>
             </div>
         </div>
+               <!-- Contatos Figurantes (Simulando conversas limpas/apagadas) -->
+            <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; opacity: 0.65;">
+                <div style="font-size: 30px; margin-right: 15px;">👤</div>
+                <div style="flex: 1; display: flex; flex-direction: column;">
+                    <strong style="color: #333; font-size: 15px;">Carlos</strong>
+                    <span style="color: #999; font-size: 13px; font-style: italic; margin-top: 2px;">Nenhuma mensagem nesta conversa</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; opacity: 0.65;">
+                <div style="font-size: 30px; margin-right: 15px;">🔬</div>
+                <div style="flex: 1; display: flex; flex-direction: column;">
+                    <strong style="color: #333; font-size: 15px;">Marta G.pesquisa</strong>
+                    <span style="color: #999; font-size: 13px; font-style: italic; margin-top: 2px;">Nenhuma mensagem nesta conversa</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; opacity: 0.65;">
+                <div style="font-size: 30px; margin-right: 15px;">👤</div>
+                <div style="flex: 1; display: flex; flex-direction: column;">
+                    <strong style="color: #333; font-size: 15px;">Renata</strong>
+                    <span style="color: #999; font-size: 13px; font-style: italic; margin-top: 2px;">Nenhuma mensagem nesta conversa</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; opacity: 0.65;">
+                <div style="font-size: 30px; margin-right: 15px;">🙏</div>
+                <div style="flex: 1; display: flex; flex-direction: column;">
+                    <strong style="color: #333; font-size: 15px;">Pastor Anselmo</strong>
+                    <span style="color: #999; font-size: 13px; font-style: italic; margin-top: 2px;">Nenhuma mensagem nesta conversa</span>
+                </div>
+            </div>
+
     </div>
 
 
