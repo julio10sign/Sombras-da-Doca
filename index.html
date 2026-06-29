@@ -329,24 +329,132 @@
 
         </div>
     </div>
-
-  <!-- TELA DE CONTATOS -->
+    <!-- TELA DE CONTATOS -->
     <div id="contatos" class="tela">
         <div class="app-header contatos-header">
-            <button class="btn-voltar" onclick="abrirZap('home')">◀</button>
+            <!-- Corrigido para mudarTela para bater com o padrão de navegação do menu -->
+            <button class="btn-voltar" onclick="mudarTela('home')">◀</button>
             <span>Meus Contatos</span>
         </div>
-        <div class="app-corpo">
-            <div class="item-lista">
-                <strong>Carlos (Suspeito 1)</strong>
-                <span>(11) 99999-1234</span>
+        <div class="app-corpo" style="padding: 10px; display: flex; flex-direction: column; gap: 8px; height: calc(100% - 50px); overflow-y: auto;">
+            
+            <!-- 🏦 Banco Central -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>🏦 Banco Central</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">0103</span>
             </div>
+
+            <!-- 👤 Carlos -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Carlos</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98214-5531</span>
+            </div>
+
+            <!-- 👤 Carol -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Carol</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98112-4498</span>
+            </div>
+
+            <!-- 🏢 Diretoria VENCO -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong style="color: #27ae60;">🏢 Diretoria VENCO</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">Contato Corporativo</span>
+            </div>
+
+            <!-- 👤 Juan -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Juan</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98322-7711</span>
+            </div>
+
+            <!-- 👤 Lucinha -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Lucinha</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 99144-8254</span>
+            </div>
+
+            <!-- ⛪ Lydia (igreja) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>⛪ Lydia (igreja)</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98855-3122</span>
+            </div>
+
+            <!-- 💇 Lydia (Salão) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>💇 Lydia (Salão)</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98114-0044</span>
+            </div>
+
+            <!-- 🔬 Marta G.pesquisa -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>🔬 Marta G.pesquisa</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">UFEPA - Lab</span>
+            </div>
+
+            <!-- 👤 Natan -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Natan</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98255-6677</span>
+            </div>
+
+            <!-- 👤 Natalia -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Natalia</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98311-5544</span>
+            </div>
+
+            <!-- 📱 Operadora (1052) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>📱 Operadora (1052)</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">Atendimento</span>
+            </div>
+
+            <!-- 🙏 Pastor Anselmo -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>🙏 Pastor Anselmo</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98711-2233</span>
+            </div>
+
+            <!-- 🎓 Prof. Linhares -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong style="color: #2980b9;">🎓 Prof. Linhares</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">UFEPA - Arqueologia</span>
+            </div>
+
+            <!-- 🎓 Prof. Otávio -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong style="color: #2980b9;">🎓 Prof. Otávio</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">UFEPA - Geologia</span>
+            </div>
+
+            <!-- 👤 Renata -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>👤 Renata</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 98115-9922</span>
+            </div>
+
+            <!-- 🔬 Sandra - Grupo Pesq -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>🔬 Sandra - Grupo Pesq</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">UFEPA - Pesquisa</span>
+            </div>
+
+            <!-- ⚠️ Sandra - UFEPA Tesour. -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong style="color: #c0392b;">⚠️ Sandra - UFEPA Tesour.</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">(91) 3214-4001</span>
+            </div>
+
+            <!-- 🍝 Spaghetto (28500) -->
+            <div class="item-lista" style="background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column;">
+                <strong>🍝 Spaghetto (28500)</strong>
+                <span style="font-size: 12px; color: #777; margin-top: 2px;">Informativo</span>
+            </div>
+
         </div>
     </div>
-  
 
-    
-</div>
 
 <script>
     let tentativaSenha = "";
