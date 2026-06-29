@@ -180,8 +180,9 @@
     </div>
 
 <!-- TELA DO WHATSAPP COM OS DIÁLOGOS REAIS -->
-    <!-- 🟢 NOVO WHATSAPP: TELA PRINCIPAL (LISTA DE CONVERSAS) -->
-    <div id="zap" class="tela" style="display: none; background: #ffffff;">
+    align-items: center; padding: 15px; border-bottom: 1px solid #eee; opacity: 0.65;">
+        <!-- 🟢 NOVO WHATSAPP: TELA PRINCIPAL (LISTA DE CONVERSAS) -->
+    <div id="zap" class="tela" style="background: #ffffff;">
         <div class="app-header zap-header" style="background: #075e54; color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; gap: 15px;">
             <button class="btn-voltar" onclick="mudarTela('home')" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">◀</button>
             <span>WhatsApp</span>
@@ -193,9 +194,9 @@
                 <div style="font-size: 30px; margin-right: 15px;">🏢</div>
                 <div style="flex: 1; display: flex; flex-direction: column;">
                     <strong style="color: #333; font-size: 15px;">Diretoria VENCO</strong>
-                    <span style="color: #777; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Apague essa conversa.</span>
+                    <span style="color: #777; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Ok. Podemos ser generosos...</span>
                 </div>
-                <span style="color: #999; font-size: 11px;">12:05</span>
+                <span style="color: #999; font-size: 11px;">12:15</span>
             </div>
 
             <!-- Linha 2: Sandra (Tesouraria) -->
@@ -218,118 +219,7 @@
                 <span style="color: #999; font-size: 11px;">09/03</span>
             </div>
 
-        </div>
-    </div>
-
-    <!-- 🏢 CONVERSA 1: DIRETORIA VENCO (Seu código original adaptado) -->
-    <div id="chat-venco" class="tela" style="display: none;">
-        <div class="app-header zap-header">
-            <!-- Corrigido para voltar para a lista do Zap e nao para a Home -->
-            <button class="btn-voltar" onclick="mudarTela('zap')">◀</button>
-            <span>Diretoria VENCO</span>
-        </div>
-        <div class="chat-box">
-            <div class="balao enviada">
-                O assistente social da UFEPA me cobrou de novo. Se eu não pagar a taxa de inadimplência da kitnet até amanhã, vou ser despejada e perder a bolsa de pesquisa. Eu preciso do adiantamento hoje.
-                <span class="mensagem-hora">10/03/2026 - 11:14</span>
-            </div>
-            <div class="balao recebida">
-                Faça a sua parte primeiro. Cadê o arquivo com o parecer do solo da Doca? O Dr. Otávio já assinou o embargo?
-                <span class="mensagem-hora">10/03/2026 - 11:20</span>
-            </div>
-            <div class="balao enviada" style="padding: 5px; max-width: 70%; display: block; clear: both; margin-bottom: 8px;">
-                <div class="foto-container" onclick="ampliarFoto(this)" style="border-radius: 8px; width: 100%;">
-                    <img src="https://googleusercontent.com" alt="foto_laudo_provisorio_doca_1.jpg">
-                </div>
-                <span class="mensagem-hora" style="margin-right: 5px; display: block; text-align: right; margin-top: 4px;">10/03/2026 - 11:45</span>
-            </div>
-            <div class="balao enviada" style="padding: 5px; max-width: 70%; display: block; clear: both; margin-bottom: 8px;">
-                <div class="foto-container" onclick="ampliarFoto(this)" style="border-radius: 8px; width: 100%;">
-                    <img src="https://googleusercontent.com" alt="foto_laudo_provisorio_doca_2.jpg">
-                </div>
-                <span class="mensagem-hora" style="margin-right: 5px; display: block; text-align: right; margin-top: 4px;">10/03/2026 - 11:45</span>
-            </div>
-            <div class="balao enviada">
-                Consegui fotografar a mesa dele enquanto ele estava na reitoria. O laudo final do solo sai em 7 dias. Ele vai embargar tudo por causa das ossadas arqueológicas. Agora faz o depósito.
-                <span class="mensagem-hora">10/03/2026 - 11:46</span>
-            </div>
-            <div class="balao recebida">
-                Confirmado. O motoboy acabou de fazer o depósito em espécie de R$ 2.500,00 na agência de São Brás. O combinado está pago. Apague essa conversa.
-                <span class="mensagem-hora">10/03/2026 - 12:05</span>
-            </div>
-       <!-- Nova Mensagem: Beatriz blefando para arrancar mais dinheiro -->
-<div class="balao enviada">
-    Vou tentar conseguir mais informações sobre o diário do professor e os registros antigos da área. Me deem mais alguns dias.
-    <span class="mensagem-hora">10/03/2026 - 12:10</span>
-</div>
-
-<!-- Nova Mensagem: Resposta ambiciosa da Diretoria VENCO -->
-<div class="balao recebida">
-    Ok. Podemos ser generosos se a informação tiver valor relevante. Mas lembre-se do nosso combinado.
-    <span class="mensagem-hora">10/03/2026 - 12:15</span>
-</div>
-
-        </div>
-    </div>
-    <!-- ⚠️ CONVERSA 2: SANDRA - UFEPA TESOUR. (Dia do Crime) -->
-    <div id="chat-sandra" class="tela" style="display: none;">
-        <div class="app-header zap-header">
-            <button class="btn-voltar" onclick="mudarTela('zap')">◀</button>
-            <span>Sandra - UFEPA Tesour.</span>
-        </div>
-        <div class="chat-box">
-            <div class="balao recebida">
-                Bom dia, Beatriz, temos um assunto serio a tratar com voce. É sobre o pagamento em atraso.
-                <span class="mensagem-hora">10/03/2026 - 09:22</span>
-            </div>
-            <div class="balao enviada">
-                bom dia Sandra, então, eu me enrolei toda mas estou providenciando o pagamento, pode aguardar um pouco mais?
-                <span class="mensagem-hora">10/03/2026 - 09:35</span>
-            </div>
-            <div class="balao recebida">
-                Beatriz eu entendo e realmente quero te ajudar, mas tambem estou sendo cobrada, e preciso apresentar a contabilidade. se vc nao quitar o debito em dois dias teremos que suspender tudo.
-                <span class="mensagem-hora">10/03/2026 - 09:40</span>
-            </div>
-            <div class="balao enviada">
-                🥹 ok, obrigada ..eu vou dar meu jeito aqui. nao posso perder isso. Eu te retorno. bom dia
-                <span class="mensagem-hora">10/03/2026 - 09:43</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 🎓 CONVERSA 3: PROF. OTÁVIO (Véspera do Crime) -->
-    <div id="chat-otavio" class="tela" style="display: none;">
-        <div class="app-header zap-header">
-            <button class="btn-voltar" onclick="mudarTela('zap')">◀</button>
-            <span>Prof. Otávio</span>
-        </div>
-        <div class="chat-box">
-            <div class="balao enviada">
-                oi prof, tudo bem? prof o senhor volta para o campus hoje ainda?
-                <span class="mensagem-hora">09/03/2026 - 15:10</span>
-            </div>
-            <div class="balao recebida">
-                oi Beatriz, nao sei. provavelmente nao. mas porque pergunta? tinhamos agendado alguma coisa? me desculpe se esqueci, mas nao lembro de haver qq compromisso hoje por aí com nossa equipe.
-                <span class="mensagem-hora">09/03/2026 - 15:18</span>
-            </div>
-            <div class="balao enviada">
-                ...ah, ...ok, nao ... prof Otavio, nao tinhamos nada marcado. egua!🤦🏻‍♀️me desculpe. leseira minha. foi meio por impulso...estou organizando as coisas aqui para sair, e como ja estou sozinha... mas nao marcamos nada nao.
-                <span class="mensagem-hora">09/03/2026 - 15:22</span>
-            </div>
-            <div class="balao recebida">
-                ok, entendo. Mas tudo bem por ai?aconteceu algo, beatriz? se ocorreu algo serio precisa que eu vá, eu me organizo aqui
-                <span class="mensagem-hora">09/03/2026 - 15:30</span>
-            </div>
-            <div class="balao enviada">
-                esta tudo bem sim, professor. fique tranquilo. nao precisa vir nao. uma boa tarde, me desculpe o incomodo
-                <span class="mensagem-hora">09/03/2026 - 15:32</span>
-            </div>
-            <div class="balao recebida">
-                👍🏻
-                <span class="mensagem-hora">09/03/2026 - 15:35</span>
-            </div>
-        </div>
-               <!-- Contatos Figurantes (Simulando conversas limpas/apagadas) -->
+            <!-- Contatos Figurantes (Simulando conversas limpas/apagadas) -->
             <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; opacity: 0.65;">
                 <div style="font-size: 30px; margin-right: 15px;">👤</div>
                 <div style="flex: 1; display: flex; flex-direction: column;">
@@ -362,7 +252,114 @@
                 </div>
             </div>
 
+        </div>
     </div>
+
+    <!-- 🏢 CONVERSA 1: DIRETORIA VENCO -->
+    <div id="chat-venco" class="tela">
+        <div class="app-header zap-header">
+            <button class="btn-voltar" onclick="mudarTela('zap')">◀</button>
+            <span>Diretoria VENCO</span>
+        </div>
+        <div class="chat-box">
+            <div class="balao enviada">
+                O assistente social da UFEPA me cobrou de novo. Se eu não pagar a taxa de inadimplência da kitnet até amanhã, vou ser despejada e perder a bolsa de pesquisa. Eu preciso do adiantamento hoje.
+                <span class="mensagem-hora">10/03/2026 - 11:14</span>
+            </div>
+            <div class="balao recebida">
+                Faça a sua parte primeiro. Cadê o arquivo com o parecer do solo da Doca? O Dr. Otávio já assinou o embargo?
+                <span class="mensagem-hora">10/03/2026 - 11:20</span>
+            </div>
+            <div class="balao enviada" style="padding: 5px; max-width: 70%; display: block; clear: both; margin-bottom: 8px;">
+                <div class="foto-container" onclick="ampliarFoto(this)" style="border-radius: 8px; width: 100%;">
+                    <img src="https://googleusercontent.com" alt="foto_laudo_provisorio_doca_1.jpg">
+                </div>
+                <span class="mensagem-hora" style="margin-right: 5px; display: block; text-align: right; margin-top: 4px;">10/03/2026 - 11:45</span>
+            </div>
+            <div class="balao enviada" style="padding: 5px; max-width: 70%; display: block; clear: both; margin-bottom: 8px;">
+                <div class="foto-container" onclick="ampliarFoto(this)" style="border-radius: 8px; width: 100%;">
+                    <img src="https://googleusercontent.com" alt="foto_laudo_provisorio_doca_2.jpg">
+                </div>
+                <span class="mensagem-hora" style="margin-right: 5px; display: block; text-align: right; margin-top: 4px;">10/03/2026 - 11:45</span>
+            </div>
+            <div class="balao enviada">
+                Consegui fotografar a mesa dele enquanto ele estava na reitoria. O laudo final do solo sai em 7 dias. Ele vai embargar tudo por causa das ossadas arqueológicas. Agora faz o depósito.
+                <span class="mensagem-hora">10/03/2026 - 11:46</span>
+            </div>
+            <div class="balao recebida">
+                Confirmado. O motoboy acabou de fazer o depósito em espécie de R$ 2.500,00 na agência de São Brás. O combinado está pago. Apague essa conversa.
+                <span class="mensagem-hora">10/03/2026 - 12:05</span>
+            </div>
+            <div class="balao enviada">
+                Vou tentar conseguir mais informações sobre o diário do professor e os registros antigos da área. Me deem mais alguns dias.
+                <span class="mensagem-hora">10/03/2026 - 12:10</span>
+            </div>
+            <div class="balao recebida">
+                Ok. Podemos ser generosos se a informação tiver valor relevante. Mas lembre-se do nosso combinado.
+                <span class="mensagem-hora">10/03/2026 - 12:15</span>
+            </div>
+        </div>
+    </div>
+    <!-- ⚠️ CONVERSA 2: SANDRA - UFEPA TESOUR. -->
+    <div id="chat-sandra" class="tela">
+        <div class="app-header zap-header">
+            <button class="btn-voltar" onclick="mudarTela('zap')">◀</button>
+            <span>Sandra - UFEPA Tesour.</span>
+        </div>
+        <div class="chat-box">
+            <div class="balao recebida">
+                Bom dia, Beatriz, temos um assunto serio a tratar com voce. É sobre o pagamento em atraso.
+                <span class="mensagem-hora">10/03/2026 - 09:22</span>
+            </div>
+            <div class="balao enviada">
+                bom dia Sandra, então, eu me enrolei toda mas estou providenciando o pagamento, pode aguardar um pouco mais?
+                <span class="mensagem-hora">10/03/2026 - 09:35</span>
+            </div>
+            <div class="balao recebida">
+                Beatriz eu entendo e realmente quero te ajudar, mas tambem estou sendo cobrada, e preciso apresentar a contabilidade. se vc nao quitar o debito em dois dias teremos que suspender tudo.
+                <span class="mensagem-hora">10/03/2026 - 09:40</span>
+            </div>
+            <div class="balao enviada">
+                🥹 ok, obrigada ..eu vou dar meu jeito aqui. nao posso perder isso. Eu te retorno. bom dia
+                <span class="mensagem-hora">10/03/2026 - 09:43</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🎓 CONVERSA 3: PROF. OTÁVIO -->
+    <div id="chat-otavio" class="tela">
+        <div class="app-header zap-header">
+            <button class="btn-voltar" onclick="mudarTela('zap')">◀</button>
+            <span>Prof. Otávio</span>
+        </div>
+        <div class="chat-box">
+            <div class="balao enviada">
+                oi prof, tudo bem? prof o senhor volta para o campus hoje ainda?
+                <span class="mensagem-hora">09/03/2026 - 15:10</span>
+            </div>
+            <div class="balao recebida">
+                oi Beatriz, nao sei. provavelmente nao. mas porque pergunta? tinhamos agendado alguma coisa? me desculpe se esqueci, mas nao lembro de haver qq compromisso hoje por aí com nossa equipe.
+                <span class="mensagem-hora">09/03/2026 - 15:18</span>
+            </div>
+            <div class="balao enviada">
+                ...ah, ...ok, nao ... prof Otavio, nao tinhamos nada marcado. egua!🤦🏻‍♀️me desculpe. leseira minha. foi meio por impulso...estou organizando as coisas aqui para sair, e como ja estou sozinha... mas nao marcamos nada nao.
+                <span class="mensagem-hora">09/03/2026 - 15:22</span>
+            </div>
+            <div class="balao recebida">
+                ok, entendo. Mas tudo bem por ai?aconteceu algo, beatriz? se ocorreu algo serio precisa que eu vá, eu me organizo aqui
+                <span class="mensagem-hora">09/03/2026 - 15:30</span>
+            </div>
+            <div class="balao enviada">
+                esta tudo bem sim, professor. fique tranquilo. nao precisa vir nao. uma boa tarde, me desculpe o incomodo
+                <span class="mensagem-hora">09/03/2026 - 15:32</span>
+            </div>
+            <div class="balao recebida">
+                👍🏻
+                <span class="mensagem-hora">09/03/2026 - 15:35</span>
+            </div>
+        </div>
+    </div>
+
 
 
 
