@@ -109,7 +109,27 @@
     gap: 10px;
 }
 
-    
+            /* Botão Power Branco com 50% de transparência integrado */
+        .btn-energia-grafico {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            opacity: 0.5; /* 🌐 Deixa o botão com 50% de transparência */
+            transition: opacity 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-energia-grafico:hover {
+            opacity: 0.9; /* Acende mais ao tocar */
+        }
+
     
     
     </style>
@@ -138,6 +158,17 @@
 
     <!-- TELA INICIAL (HOME) -->
     <div id="home" class="tela">
+          
+        <!-- Botão Power com o símbolo idêntico ao exemplo, em branco puro -->
+        <button class="btn-energia-grafico" onclick="bloquearAparelho()">
+            <span style="font-size: 24px; color: #ffffff; font-weight: bold; line-height: 1;">⏻</span>
+        </button>
+
+        <div class="linha-cima-invisivel">
+            <button class="btn-oculto" onclick="mudarTela('galeria')"></button>
+        </div>
+
+        
         <div class="linha-cima-invisivel">
             <button class="btn-oculto" onclick="mudarTela('galeria')"></button>
         </div>
