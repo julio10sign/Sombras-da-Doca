@@ -617,15 +617,16 @@
     let tentativaSenha = "";
     const senhaCorreta = "1462";
 
+    
     function digitar(numero) {
         tentativaSenha += numero;
         if (tentativaSenha.length === 4) {
             if (tentativaSenha === senhaCorreta) {
-                var cel = document.getElementById('aparelho') || document.getElementById('celular');
-                if (cel) {
-                    if (cel.requestFullscreen) { cel.requestFullscreen(); }
-                    else if (cel.webkitRequestFullscreen) { cel.webkitRequestFullscreen(); }
-                }
+                // Formula universal: Aplica a tela cheia na raiz da pagina, ignorando erros de ID
+                var doc = document.documentElement;
+                if (doc.requestFullscreen) { doc.requestFullscreen(); }
+                else if (doc.webkitRequestFullscreen) { doc.webkitRequestFullscreen(); }
+                
                 mudarTela('home');
                 tentativaSenha = "";
             } else {
