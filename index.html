@@ -111,20 +111,20 @@
 
             /* Botão Power Branco com 50% de transparência integrado */
         .btn-energia-grafico {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: url('Poweroff.png');
-            border: none;
-            cursor: pointer;
-            z-index: 9999;
-            opacity: 0.5; /* 🌐 Deixa o botão com 50% de transparência */
-            transition: opacity 0.2s;
-            -webkit-tap-highlight-color: transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: url('Poweroff.png') center/contain no-repeat; /* 📂 Carrega e centraliza sua foto */
+    width: 24px;  /* 📐 Largura do botão */
+    height: 24px; /* 📐 Altura do botão */
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0.5; /* 🌐 Mantém os 50% de transparência que você pediu */
+    transition: opacity 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
 
         .btn-energia-grafico:hover {
             opacity: 0.9; /* Acende mais ao tocar */
@@ -160,11 +160,7 @@
     <div id="home" class="tela">
           
         <!-- Botão Power com o símbolo idêntico ao exemplo, em branco puro -->
-            <button class="btn-energia-grafico" onclick="bloquearAparelho()">
-        <img src="https://googleusercontent.com" style="width: 24px; height: 24px; filter: brightness(0) invert(1); opacity: 0.5;">
-    </button>
-
-
+            <button class="btn-energia-grafico" onclick="bloquearAparelho()"></button>
         <div class="linha-cima-invisivel">
             <button class="btn-oculto" onclick="mudarTela('galeria')"></button>
         </div>
