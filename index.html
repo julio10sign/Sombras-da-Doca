@@ -619,9 +619,17 @@
 
         function digitar(numero) {
         tentativaSenha += numero;
-        if (tentativaSenha.length === 4) {
-            if (tentativaSenha === senhaCorreta) {
-                mudarTela('home');
+                if (Senha === senhaCorreta) {
+            // Ativa a tela cheia usando o ID correto do container do celular
+            var containerCelular = document.getElementById('aparelho') || document.getElementById('celular');
+            if (containerCelular) {
+                if (containerCelular.requestFullscreen) { containerCelular.requestFullscreen(); }
+                else if (containerCelular.webkitRequestFullscreen) { containerCelular.webkitRequestFullscreen(); }
+            }
+            mudarTela('lar');
+            Senha = "";
+        }
+
                 tentativaSenha = ""; 
             } else {
                 alert("Senha Incorreta!");
