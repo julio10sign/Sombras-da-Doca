@@ -617,25 +617,24 @@
     let tentativaSenha = "";
     const senhaCorreta = "1462";
 
-        function digitar(numero) {
+    function digitar(numero) {
         tentativaSenha += numero;
-                if (Senha === senhaCorreta) {
-            // Ativa a tela cheia usando o ID correto do container do celular
-            var containerCelular = document.getElementById('aparelho') || document.getElementById('celular');
-            if (containerCelular) {
-                if (containerCelular.requestFullscreen) { containerCelular.requestFullscreen(); }
-                else if (containerCelular.webkitRequestFullscreen) { containerCelular.webkitRequestFullscreen(); }
-            }
-            mudarTela('lar');
-            Senha = "";
-        }
-
-                tentativaSenha = ""; 
+        if (tentativaSenha.length === 4) {
+            if (tentativaSenha === senhaCorreta) {
+                var cel = document.getElementById('aparelho') || document.getElementById('celular');
+                if (cel) {
+                    if (cel.requestFullscreen) { cel.requestFullscreen(); }
+                    else if (cel.webkitRequestFullscreen) { cel.webkitRequestFullscreen(); }
+                }
+                mudarTela('lar');
+                tentativaSenha = "";
             } else {
                 alert("Senha Incorreta!");
-                tentativaSenha = ""; 
+                tentativaSenha = "";
             }
         }
+    }
+
     }
 
     // Esta função agora aceita qualquer um dos nomes para não travar os botões
